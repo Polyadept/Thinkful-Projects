@@ -27,8 +27,7 @@ adjectives = ["Fragrant", "Stinky", "Graceful", "Stupendous", "Raucous"]
 
 nouns = ["Whale", "Shipyard", "Noose", "Captain", "Pearl"]
 
-
-    
+# Determines your drink preference, sweet, salty etc
 def drink_pref():    
     pref = {}
     for k,v in questions.items():
@@ -37,6 +36,7 @@ def drink_pref():
             pref[k] = (response)
     return pref
                
+# Based on your drink preference, determine the ingredients
 def drink_ingre():        
     drink = []
     pref = drink_pref() 
@@ -46,12 +46,13 @@ def drink_ingre():
                 drink.append(random.choice(value_ingr))
     return drink
        
+# Make a random drink name
 def drink_name():
     adj = random.choice(adjectives)
     noun = random.choice(nouns)
     return adj, noun
         
-
+# Main function, limits drinks, show drink ingredients and then gives a name
 def main():
     drink_limit = 0
     drink_tag = drink_name()
